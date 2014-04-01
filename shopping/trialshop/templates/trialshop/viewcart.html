@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Free ecommerce template by @webdezign</title>
+<link rel="stylesheet" href="{{ STATIC_URL }}css/cart_style.css" />
+<link href='http://fonts.googleapis.com/css?family=Terminal+Dosis' rel='stylesheet' type='text/css'>
+<!-- The below script Makes IE understand the new html5 tags are there and applies our CSS to it -->
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<article id="basket">
+<h1>Shopping Bag</h1>
+<div style=" color: #c09853;
+  background-color: #fcf8e3;
+  border-color: #faebcc;text-align:center"><h2>{{mesg}}</h2></div>
+<table width="100" border="1">
+    <tr>
+        <th scope="col" class="description">Product</th>
+        <th scope="col" class="options">Options</th>
+        <th align="right" scope="col" class="price">Price</th>
+    </tr>
+    {% for product in productobj %}
+        {% if product.cart_value %}
+            <tr>
+                <td align="left" valign="top" class="description"><a href="#"><img src="{{ product.product_pic.url }}" alt="Elegant evening Dress" class="left" /></a><p><a href="main.html">{{product.product_name}}</a><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ultricies fringilla. Suspendisse iaculis tristique leo, id adipiscing massa aliquet ut. Etiam adipiscing auctor enim nec tincidunt. </p>
+                </td>
+                <td align="left" valign="top" class="options">
+                	<dl>
+                        <dt>Product Id</dt>
+                        <dd>{{product.id}}</dd>
+                        <dt>Product Name</dt>
+                        <dd>{{product.product_name}}</dd>
+                        <dt>Brand:</dt>
+                        <dd>{{product.product_brand}}</dd>
+                        <dt>Categories:</dt>
+                        <dd>{{product.product_type}}</dd>
+                    </dl>
+                   <a href="/remove_cart/{{product.id}}/">
+                    <button type="submit">Remove</button></a>
+                 
+                </td>
+                <td align="right" valign="top" class="price">Rs: {{product.product_price}}</td>
+            </tr>
+
+        {% endif%}    
+    {% endfor%}
+</table>
+<img src="{{ STATIC_URL }}images/creditcards.gif" class="safe" />
+<div class="right">
+    <strong>Total Charges</strong> <em>{{total}}</em><br />
+
+</div>
+<button class="continue">Pay securely now</button>
+</article>
+
+</body>
+</html>
