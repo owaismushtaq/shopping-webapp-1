@@ -13,7 +13,7 @@ class Product(models.Model):
 	product_type = models.ForeignKey(Product_Cat)
 	product_name = models.CharField(max_length=200)
 	product_brand = models.CharField(max_length=200)
-	product_pic = models.ImageField(upload_to='photos/%Y/%m/%d')
+	product_pic = models.ImageField(upload_to='img')
 	product_price = models.IntegerField(default=0)
 	pub_date = models.DateTimeField('date published')
 	cart_value= models.BooleanField(default=False)

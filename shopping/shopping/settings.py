@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    
+    #'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,6 +53,10 @@ ROOT_URLCONF = 'shopping.urls'
 
 WSGI_APPLICATION = 'shopping.wsgi.application'
 
+#STATICFILES_FINDERS = (
+ #   'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+  #  'django.contrib.staticfiles.finders.FileSystemFinder',
+#)
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
@@ -60,7 +64,7 @@ WSGI_APPLICATION = 'shopping.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'shop_app',
+        'NAME': 'nasirshop_app',
         'USER': 'root',
         'PASSWORD':'root',
     }
@@ -77,11 +81,11 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-print os.path.join(BASE_DIR)
-
-MEDIA_ROOT =os.path.join(BASE_DIR,'trialshop/media/')
+#print os.path.join(BASE_DIR)
+#MEDIA_ROOT ='media/'
+MEDIA_ROOT ='srv/www/shopping-webapp/shopping/trialshop/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
-
+#STATIC_ROOT='shopping/trialshop/static/'
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
